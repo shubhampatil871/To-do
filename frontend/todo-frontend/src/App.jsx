@@ -26,10 +26,12 @@ const App = () => {
   };
 
   return (
-    <div>
-      <h1>Todo List</h1>
+    <div className="bg-base-300 w-full min-h-screen  flex  items-center py-2 flex-col">
+      <h1 className=" text-white font-bold text-5xl mb-5">Todo List</h1>
       <TodoForm onAddTodo={addTodo} />
-      <TodoList todos={todos} />
+      <div className="">
+        <TodoList todos={todos} />
+      </div>
     </div>
   );
 };

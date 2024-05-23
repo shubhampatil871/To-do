@@ -6,7 +6,7 @@ import TodoItem from "./TodoItem";
 
 const TodoList = ({ todos }) => {
   return (
-    <ul>
+    <ul className="card bg-zinc-800 p-4 w-96 my-4">
       {todos.map((todo) => (
         <TodoItem key={todo._id} todo={todo} />
       ))}

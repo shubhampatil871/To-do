@@ -25,13 +25,17 @@ const TodoForm = ({ onAddTodo }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form
+      onSubmit={handleSubmit}
+      className="flex  flex-col w-96 bg-zinc-800 rounded-2xl p-6"
+    >
       <input
         type="text"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         placeholder="Title"
         required
+        className="m-1 input input-bordered w-full max-w-xs bg-base-200"
       />
       <input
         type="text"
@@ -39,8 +43,11 @@ const TodoForm = ({ onAddTodo }) => {
         onChange={(e) => setDescription(e.target.value)}
         placeholder="Description"
         required
+        className=" m-1 input input-bordered input-lg w-full max-w-xs bg-base-200"
       />
-      <button type="submit">Add Todo</button>
+      <button type="submit" className="btn btn-primary my-2">
+        Add Todo
+      </button>
     </form>
   );
 };
