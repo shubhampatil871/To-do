@@ -24,7 +24,7 @@ const TodoForm = ({ onAddOrUpdateTodo, editingTodo }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex  flex-col w-96 bg-zinc-800 rounded-2xl p-6" >
+    <form onSubmit={handleSubmit} className="flex  flex-col w-96 bg-zinc-800 rounded-2xl p-6 my-4" >
       <input
         type="text"
         value={title}
@@ -33,12 +33,12 @@ const TodoForm = ({ onAddOrUpdateTodo, editingTodo }) => {
         required
         className="m-1 input input-bordered w-full max-w-xs bg-base-200"
       />
-      <textarea
+      <input
         value={description}
         onChange={(e) => setDescription(e.target.value)}
         placeholder="Description"
         required
-        className="m-1 input input-bordered input-lg w-full max-w-xs bg-base-200"
+        className="mx-1 my-2 input input-bordered input-lg w-full max-w-xs bg-base-200"
       />
       <button type="submit" className="btn btn-primary">
         {editingTodo ? "Update Todo" : "Add Todo"}
