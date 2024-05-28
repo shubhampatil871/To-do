@@ -1,14 +1,18 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-// src/TodoList.js
+/* eslint-disable no-unused-vars */
+// src/components/TodoList.jsx
 import React from "react";
 import TodoItem from "./TodoItem";
 
-const TodoList = ({ todos }) => {
+const TodoList = ({ todos, onDelete, onEdit }) => {
+  if (todos.length === 0) {
+    return <p className="text-white text-xl">No todos available. Please add some tasks.</p>;
+  }
+
   return (
-    <ul className="card bg-zinc-800 p-4 w-96 my-4">
+    <ul>
       {todos.map((todo) => (
-        <TodoItem key={todo._id} todo={todo} />
+        <TodoItem key={todo._id} todo={todo} onDelete={onDelete} onEdit={onEdit} />
       ))}
     </ul>
   );
